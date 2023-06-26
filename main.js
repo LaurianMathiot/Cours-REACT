@@ -28,30 +28,33 @@ button.addEventListener("click", () => {
 // FACTORISATION
 
     // je crée l'article
-    const articleElement = createNodeElement("div")
+    const articleElement = createNodeElement("article", {class: "article-piscine"})
     divRoot.appendChild(articleElement)
 
     // je crée le titre 
-    const elementTitle = createNodeElement("h1", "Titre")
+    const elementTitle = createNodeElement("h1", {class: "title-piscine"}, "Titre")
     divRoot.appendChild(elementTitle)
 
     // je crée l'img
-    const elementImg = createNodeElement("img", "", "https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg")
+    const elementImg = createNodeElement("img", {class: "img-piscine", src:"https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg"})
     divRoot.appendChild(elementImg)
 
     // je crée le texte
-    const elementText = createNodeElement("p", "Mon texte")
+    const elementText = createNodeElement("p", {class: "text-piscine"}, "Mon texte")
     divRoot.appendChild(elementText)
 
 })
 
     // je crée une fonction avec les paramètres modifiables dont j'ai besoin, ici : 
     // le type de balise, le contenu texte et la source des images
-    
-const createNodeElement = (tagType, elementText = "", imgSrc) => {
+
+const createNodeElement = (tagType, attributes, elementText = "") => {
     const nodeElement = document.createElement(tagType)
     nodeElement.textContent = elementText
-    nodeElement.setAttribute("src", imgSrc)
+
+    for (const property in attributes) {
+        nodeElement.setAttribute(property,attributes[property])
+    }
 
     // je retourne le résultat de ma fonction pour pouvoir l'utiliser en dehors de celle-ci
     return nodeElement
