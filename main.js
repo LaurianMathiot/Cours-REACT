@@ -1,59 +1,38 @@
 const button = document.querySelector("button")
 
-button.addEventListener("click", () => {
-    
-    // j'appelle la div #root
+button.addEventListener("click", async () => {
     const divRoot = document.querySelector("#root")
 
-    // // je crée mon article
-    // const articleElement = document.createElement("article")
+    // Récuperer les données de l'API
+    // fetch sur l'url 
+    const responseJson = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
+    const responseJavascript = await responseJson.json()
 
-    // // je place l'article dans #root
-    // divRoot.appendChild(articleElement)
+    // quand j'ai récupéré les données (recettes)
+    responseJavascript.meals.forEach(meal => {
+        // j'affiche le titre de chacune des recettes
+        const mealTitleElement = createNodeElement("h2",
+        {class:"meal-title"},
+        meal.strMeal
+        )
 
-    // // je créé les éléments de mon article
-    // const elementTitle = document.createElement("h1")
-    // elementTitle.textContent = "Mon titre"
-    // articleElement.appendChild(elementTitle)
+        divRoot.appendChild(mealTitleElement)
 
-    // const elementImg = document.createElement("img")
-    // elementImg.setAttribute("src", "https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg")
-    // articleElement.appendChild(elementImg)
-
-    // const elementText = document.createElement("p")
-    // elementText.textContent = "Mon texte"
-    // articleElement.appendChild(elementText)
-
-
-// FACTORISATION
-
-    // je crée l'article
-    const articleElement = createNodeElement("article", {class: "article-piscine"})
-    divRoot.appendChild(articleElement)
-
-    // je crée le titre 
-    const elementTitle = createNodeElement("h1", {class: "title-piscine"}, "Titre")
-    divRoot.appendChild(elementTitle)
-
-    // je crée l'img
-    const elementImg = createNodeElement("img", {class: "img-piscine", src:"https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg"})
-    divRoot.appendChild(elementImg)
-
-    // je crée le texte
-    const elementText = createNodeElement("p", {class: "text-piscine"}, "Mon texte")
-    divRoot.appendChild(elementText)
-
-})
-
-    // je crée une fonction avec les paramètres modifiables dont j'ai besoin, ici : 
-    // le type de balise, le contenu texte et la source des images
+        const mealImgElement = createNodeElement("img", {
+            src: meal.strMealThumb,
+          });
+      
+          // j'insère l'image dans ma div root
+          divRoot.appendChild(mealImgElement);
+        });
+    })
 
 const createNodeElement = (tagType, attributes, elementText = "") => {
     const nodeElement = document.createElement(tagType)
     nodeElement.textContent = elementText
 
     for (const property in attributes) {
-        nodeElement.setAttribute(property,attributes[property])
+        nodeElement.setAttribute(property, attributes[property])
     }
 
     // je retourne le résultat de ma fonction pour pouvoir l'utiliser en dehors de celle-ci
