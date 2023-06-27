@@ -1,9 +1,10 @@
+import "./App.css";
+import Profile from "./Profile";
 
-
-function App() {
+const App = () => {
   return (
     <div>
-      <p>Bonjour Piscine</p>
+      <Profile />
     </div>
   );
 }
