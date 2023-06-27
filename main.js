@@ -12,54 +12,54 @@ const createNodeElement = (tagType, attributes, elementText = "") => {
     return nodeElement
 }
 
-const contactFormComponent = () => {
-
-    const formElement = createNodeElement('form')
-    
-    const inputText = createNodeElement('input', {
-        type: "text",
-        class: "contact-text",
-    })
-    formElement.appendChild(inputText)
-
-    const submitBtnElement = createNodeElement ('button', {
-        type: "submit",
-        class: "contact-submit",
-        },
-        "Envoyer"
-    )
-    formElement.appendChild(submitBtnElement)
-
-    divRoot.appendChild(formElement)
-}
-
-contactFormComponent()
-
-const mealsList = async () => {    
-    
-    const responseJson = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
-    const responseJavascript = await responseJson.json()
-
-    const recepiesTitle = createNodeElement("h2",{class: "recepies-title"}, "Recettes")
-
-        divRoot.appendChild(recepiesTitle)
-    
-    
-    responseJavascript.meals.forEach(meal => {
-    
-        const mealTitleElement = createNodeElement("h2",
-        {class: "meal-title"},
-        meal.strMeal
-        )
-    
-        divRoot.appendChild(mealTitleElement)
-    
-        const mealImgElement = createNodeElement("img", {
-            src: meal.strMealThumb,
-            });
+    const mealsList = async () => {    
         
-            divRoot.appendChild(mealImgElement);
-        });
+        const responseJson = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
+        const responseJavascript = await responseJson.json()
+
+        const recepiesTitle = createNodeElement("h2",{class: "recepies-title"}, "Recettes")
+
+            divRoot.appendChild(recepiesTitle)
+        
+        
+        responseJavascript.meals.forEach(meal => {
+        
+            const mealTitleElement = createNodeElement("h2",
+            {class: "meal-title"},
+            meal.strMeal
+            )
+        
+            divRoot.appendChild(mealTitleElement)
+        
+            const mealImgElement = createNodeElement("img", {
+                src: meal.strMealThumb,
+                });
+            
+                divRoot.appendChild(mealImgElement);
+            });
+
+    const contactFormComponent = () => {
+
+        const formElement = createNodeElement('form')
+        
+        const inputText = createNodeElement('input', {
+            type: "text",
+            class: "contact-text",
+        })
+        formElement.appendChild(inputText)
+
+        const submitBtnElement = createNodeElement ('button', {
+            type: "submit",
+            class: "contact-submit",
+            },
+            "Envoyer"
+        )
+        formElement.appendChild(submitBtnElement)
+
+        divRoot.appendChild(formElement)
+    }
+
+    contactFormComponent()
 }
 
 mealsList()
@@ -71,23 +71,23 @@ const mealsCategories = async () => {
     const responseJson = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php") 
     const responseJavascript = await responseJson.json()
 
-        // je créé un titre "Catégories" à cette section
-        const categoriesTitle = createNodeElement("h2",{class: "categories-title"}, "Catégories")
+    // je créé un titre "Catégories" à cette section
+    const categoriesTitle = createNodeElement("h2",{class: "categories-title"}, "Catégories")
 
-        // je l'intègre dans ma div
-        divRoot2.appendChild(categoriesTitle)
+    // je l'intègre dans ma div
+    divRoot2.appendChild(categoriesTitle)
 
     // je parcours les éléments de l'API 
     responseJavascript.categories.forEach(meal => {
 
-        // je créé les éléments portant les noms des catégories et je leur applique une classe
-        const mealCategory = createNodeElement("h2",
-        {class: "meal-category"},
-        meal.strCategory
-        )
+    // je créé les éléments portant les noms des catégories et je leur applique une classe
+    const mealCategory = createNodeElement("h2",
+    {class: "meal-category"},
+    meal.strCategory
+    )
 
-        // je les envoie dans ma div
-        divRoot2.appendChild(mealCategory)
+    // je les envoie dans ma div
+    divRoot2.appendChild(mealCategory)
 
     })
 }
