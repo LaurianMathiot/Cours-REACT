@@ -1,11 +1,11 @@
 
 function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="copyright">
                 <p>© miam-miam.fr | Mentions légales</p>
             </div>
-        </div>
+        </footer>
     )
 }
 

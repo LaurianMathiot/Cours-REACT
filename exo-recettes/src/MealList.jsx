@@ -27,16 +27,16 @@ function MealList() {
 
     return (
         <div className="meals-container">
-            {mealsListResponseFromFakeApi.map((element) => (
-                element.isPublished === false ? null : 
+            {mealsListResponseFromFakeApi.map(element => (
+                element.isPublished && (
                 <article>
                     <img src={element.image} alt={element.title} />
                     <div className="text-content">
-                    <h2>{element.title}</h2>
-                    <p>{element.description}</p>
+                        <h2>{element.title}</h2>
+                        <p>{element.description}</p>
                     </div>
                 </article> 
-            ))}
+            )))}
         </div>
     )
 }

@@ -5,11 +5,11 @@ import MealList from './MealList';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <MealList />
       <Footer />
-    </div>
+    </>
   );
 }
 
