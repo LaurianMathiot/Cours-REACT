@@ -1,0 +1,164 @@
+:root {
+  --col1 : rgb(46, 142, 232);
+  --col2 : rgb(230, 230, 230);
+  --col3 : rgb(0, 14, 60);
+  --col4 : rgb(169, 169, 169);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--col3);
+}
+
+.main-header, .main-footer {
+  background-color: var(--col1);
+}
+
+/* header */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid var(--col3);
+  padding: 5px 50px;
+  color: var(--col3);
+}
+
+.main-header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header nav ul li {
+  padding: 0 20px;
+  font-weight: 700;
+}
+
+.main-header nav ul >:nth-child(2) {
+  padding-right: 40px;
+}
+
+.main-header nav ul >:nth-child(3) {
+  padding: 10px 20px;
+  background-color: white;
+  border: 2px solid var(--col3);
+  border-radius: 100px;
+}
+
+.img-container svg {
+  height: 100px;
+  fill: var(--col2);
+}
+
+/* banner */
+
+.banner {
+  height: 300px;
+  width: 100vw;
+  background-image: url(https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+/* profil */
+
+h2 {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: var(--col1);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.name-age {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.name-age h3 {
+  position: relative;
+}
+
+.name-age h3:after {
+  content: "•";
+  position: absolute;
+  right: -23px;
+}
+
+h4 {
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-infos {
+  border-right: 1px solid var(--col2);
+  padding: 50px 100px;
+}
+
+.profile-infos p {
+  margin: 5px 0;
+}
+
+.phone {
+  margin-bottom: 10px !important;
+}
+
+.experiences-container {
+  padding: 50px 100px;
+  width: 30vw
+}
+
+.experience {
+  margin-top: 30px;
+}
+
+.experience >:first-child {
+  font-style: italic;
+  color: var(--col4);
+  font-weight: 500;
+}
+
+.experience h3 {
+  margin: 5px 0;
+}
+
+.current-experience {
+  font-weight: 600;
+  color: var(--col1);
+}
+
+
+/* footer */
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  color: var(--col2);
+  border-top: 1px solid var(--col3);
+}
