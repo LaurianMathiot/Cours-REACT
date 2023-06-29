@@ -31,15 +31,14 @@ function Experiences() {
 
     return(
         <div className="experiences-container">
-            <div>
-                <h2>Experiences</h2></div>
-                {experiencesFromFakeApi.map(element => (
-                    <div className="experience">
-                        <p>{element.startDate} → {element.isCurrent ? <span className="current-experience">aujourd'hui</span> : element.endDate}</p>
-                        <h3>{element.title}</h3>
-                        <p>{element.company}</p>
-                        <p>{element.description}</p>
-                    </div>
+            <div><h2>Experiences</h2></div>
+            {experiencesFromFakeApi.map(element => (
+                <div className="experience">
+                    <p>{element.startDate} → {element.isCurrent ? <span className="current-experience">aujourd'hui</span> : element.endDate}</p>
+                    <h3>{element.title}</h3>
+                    <p>{element.company}</p>
+                    <p>{element.description}</p>
+                </div>
             ))}
         </div>
     )
