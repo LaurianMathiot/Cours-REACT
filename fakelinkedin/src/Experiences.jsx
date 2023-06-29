@@ -1,4 +1,4 @@
-function Experiences() {
+function Experiences(postsFeedFromFakeApi) {
     const experiencesFromFakeApi = [
         {
             id: 1,
