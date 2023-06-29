@@ -4,7 +4,6 @@ import Experiences from './Experiences';
 import Footer from './Footer';
 import Header from './Header';
 import Profile from './Profile';
-import PostsFeed from './PostsFeed';
 
 function App() {
   return (
@@ -15,8 +14,6 @@ function App() {
           <Profile/>
           <Experiences/>
         </div>
-        <div className="banner banner2"></div>
-        <PostsFeed/>
         <Footer/>
       </>
   );
