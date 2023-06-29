@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  transition: all 0.2s ease-in-out;
+}
+
+:root {
+  --primaryColor : rgb(24, 24, 24);
+  --secondaryColor : white;
+  --tertiaryColor : rgb(156, 0, 57);
+  --fourtyColor : rgb(34, 34, 34);
+  --fiftyColor : rgb(48, 48, 48);
+
+}
+
+/* header */
+
+.main-header {
+  padding: 5px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  border-bottom: 1px solid var(--fiftyColor);
+}
+
+.main-header .img-container {
+  height: 50px;
+}
+
+.main-header .img-container svg {
+  height: 100%;
+  fill: var(--tertiaryColor);
+  rotate: -5deg;
+}
+
+.main-header ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.main-header ul li {
+  margin: 0 30px;
+  font-weight: 600;
+}
+
+.main-header ul li:hover {
+  color: var(--tertiaryColor);
+}
+
+.main-header ul >:last-child {
+  border: 1px solid var(--tertiaryColor);
+  padding: 10px 15px;
+  border-radius: 100px;
+}
+
+.main-header ul >:last-child:hover {
+  background-color: var(--tertiaryColor);
+  color: var(--secondaryColor);
+}
+
+/* main container */
+
+.main-container {
+  display: flex;
+}
+
+/* main */
+
+.main-section {
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  width: 80vw;
+  padding: 50px;
+}
+
+.random-section {
+  margin-bottom: 50px;
+  background-color: var(--tertiaryColor);
+  padding: 50px 50px 25px;
+  position: relative;
+}
+
+.random-section h2 {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondaryColor);
+  color: var(--tertiaryColor);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 15px;
+  rotate: -3deg;
+  box-shadow: 15px 10px 0 var(--primaryColor);
+}
+
+.random-section .ingredients {
+  color: var(--primaryColor);
+}
+
+.cocktail-infos {
+  margin: 20px 0;
+}
+
+.cocktail-name-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cocktail-name-price p {
+  font-weight: 500;
+}
+
+
+.ingredients {
+  font-style: italic;
+  color: var(--tertiaryColor);
+}
+
+/* sidebar */
+
+.sidebar {
+  width: 20vw;
+  padding: 50px;
+  background-color: var(--fourtyColor);
+  color: var(--secondaryColor);
+}
+
+h2 {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+ .sidebar h2::after,  .all-section h2::after, .last-cocktails-section h2::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  background-color: var(--tertiaryColor);
+}
+
+.phone {
+  margin: 10px 0;
+}
+
+/* footer */
+
+.main-footer {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  border-top: 1px solid var(--fiftyColor);
+}
+
+.hours {
+  border-left: 1px solid var(--tertiaryColor);
+  padding-left: 50px;
+}
+
+.main-footer .img-container {
+  height: 100px;
+  padding-right: 50px;
+}
+
+.main-footer .img-container svg {
+  height: 100%;
+  fill: var(--tertiaryColor);
+  rotate: -5deg;
+}
