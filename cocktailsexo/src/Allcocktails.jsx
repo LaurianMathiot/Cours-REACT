@@ -11,7 +11,11 @@ const Allcocktails = ({cocktailsFromApi}) => {
                         <h3>{element.name}</h3>
                         <p>{element.price} €</p>
                     </div>
-                    <p className="ingredients">{element.ingredients}</p>
+                    <ul>
+                        {element.ingredients.map((ingredient) => {
+                            return <li>{ingredient}</li>
+                        })}
+                    </ul>
                 </article> 
             )))}
       </div>

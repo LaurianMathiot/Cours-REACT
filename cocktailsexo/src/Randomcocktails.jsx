@@ -1,6 +1,6 @@
 
 const Randomcocktails = ({cocktailsFromApi}) => {
-    
+
     let table = []
 
     cocktailsFromApi.map(element => (
@@ -20,7 +20,11 @@ const Randomcocktails = ({cocktailsFromApi}) => {
                     <h3>{result.name}</h3>
                     <p>{result.price} €</p>
                 </div>
-                <p className="ingredients">{result.ingredients}</p>
+                <ul>
+                    {result.ingredients.map((ingredient) => {
+                        return <li>{ingredient}</li>
+                    })}
+                </ul>
             </article> 
       </div>
     )

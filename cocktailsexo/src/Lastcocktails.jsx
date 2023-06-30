@@ -1,13 +1,12 @@
 
 const Lastcocktails = ({cocktailsFromApi}) => {
     
-    let table = []
 
-    cocktailsFromApi.map(element => (
-        element.isPublished && (table.push(element))
-    ))
+    const cocktailsPublished = cocktailsFromApi.filter((cocktail) => {
+        return cocktail.isPublished
+    })
 
-    let result = table.slice(-2)
+    let result = cocktailsPublished.slice(-2)
 
     console.log(result)
     
@@ -20,7 +19,11 @@ const Lastcocktails = ({cocktailsFromApi}) => {
                         <h3>{result.name}</h3>
                         <p>{result.price} €</p>
                     </div>
-                    <p className="ingredients">{result.ingredients}</p>
+                    <ul>
+                        {result.ingredients.map((ingredient) => {
+                            return <li>{ingredient}</li>
+                        })}
+                    </ul>
                 </article> 
             ))}
         </div>

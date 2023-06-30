@@ -150,6 +150,28 @@ h2 {
   margin: 10px 0;
 }
 
+article ul {
+  display: flex;
+  position: relative;
+}
+
+article ul li {
+  margin: 0 3px;
+  color: var(--tertiaryColor);
+  font-style: italic;
+
+}
+
+.random-section article ul li {
+  margin: 0 3px;
+  color: var(--primaryColor);
+
+}
+
+article ul li::after {
+  content: ",";
+}
+
 /* footer */
 
 .main-footer {
