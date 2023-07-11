@@ -36,7 +36,7 @@ function CreateCoworking() {
                     <input type="text" name="address" id="address" required />
                 </div>
                 <div className=" form-element submit-btn">
-                    <input type="submit" name="submit" id="submit" value="Send" required />
+                    <input className="btn" type="submit" name="submit" id="submit" value="Send" required />
                 </div>
             </form>
         </section>
