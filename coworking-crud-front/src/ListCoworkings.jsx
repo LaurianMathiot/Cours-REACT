@@ -41,36 +41,29 @@ const ListCoworkings = () => {
 
     const [filter, setFilter] = useState("Bordeaux");
 
-    const handleFilterClickBordeaux = () => {
-        setFilter("Bordeaux");
+    const handleFilterClick = (value) => {
+        setFilter(value);
       };
-    
-    const handleFilterClickMerignac = () => {
-    setFilter("Merignac");
-    };
-
-    const handleFilterClickLormont = () => {
-    setFilter("Lormont");
-    };
-
-    const handleFilterClickEysines = () => {
-    setFilter("Eysines");
-    };
 
     const filteredCoworkings = coworkings.filter((coworking) => {
-    return coworking.address === filter;
-    });
+
+    if (filter === null) {
+        return true;
+    }
     
+    return coworking.address === filter;
+      });
   
     return (
       <section className="liste-coworkings">
         <h2>Liste des coworkings</h2>
         
         <div className="filter-btn-container">
-            <button className="filter-btn btn" onClick={handleFilterClickBordeaux}>Bordeaux</button>
-            <button className="filter-btn btn" onClick={handleFilterClickMerignac}>Mérignac</button>
-            <button className="filter-btn btn" onClick={handleFilterClickLormont}>Lormont</button>
-            <button className="filter-btn btn" onClick={handleFilterClickEysines}>Eysines</button>
+            <button className="filter-btn btn" onClick={() => handleFilterClick(null)}>All</button>
+            <button className="filter-btn btn" onClick={() => handleFilterClick("Bordeaux")}>Bordeaux</button>
+            <button className="filter-btn btn" onClick={() => handleFilterClick("Merignac")}>Mérignac</button>
+            <button className="filter-btn btn" onClick={() => handleFilterClick("Lormont")}>Lormont</button>
+            <button className="filter-btn btn" onClick={() => handleFilterClick("Eysines")}>Eysines</button>
         </div>
   
         <div className="articles-container">
