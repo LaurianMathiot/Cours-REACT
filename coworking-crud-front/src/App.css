@@ -1,0 +1,38 @@
+* {
+  font-family: 'poppins';
+}
+
+:root {
+  --color1: rgb(227, 227, 227);
+  
+}
+
+/* FORM SECTION */
+
+.form-section {
+  display: flex;
+  justify-content: center;
+}
+
+/*  FORM */
+
+form {
+  width: 200px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+input, textarea {
+  border-radius: 10px;
+  border: 1px solid var(--color1);
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.submit-btn {
+  text-align: end;
+}
