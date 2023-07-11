@@ -184,3 +184,32 @@ article svg {
   width: auto;
   fill: var(--color2);
 }
+
+/* BANNER */
+
+.banner {
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 40vh;
+position: relative;
+background-color: #191950;
+background-image: url(https://images.unsplash.com/photo-1553028826-f4804a6dba3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+background-blend-mode:soft-light ;
+background-position: center;
+background-size: cover;
+}
+
+h1 {
+  margin-bottom: 5vh;
+  text-align: center !important;
+
+}
+
+.banner .button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);  
+  width: 200px;
+}
