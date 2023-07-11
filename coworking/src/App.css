@@ -21,8 +21,7 @@ body {
 
 h2 {
   grid-column: 1/5;
-  text-align: center;
-  margin-top: 4vh;
+  /* text-align: center; */
   color: var(--color2);
   font-weight: 500;
 }
@@ -63,6 +62,27 @@ h2 {
 
 }
 
+.main-header nav ul li a:hover {
+  color: var(--color5);
+
+}
+
+.button {
+  grid-column: 1/5;
+  margin: auto;
+  padding: 12px 24px;
+  background-color: var(--color3);
+  width: 130px;
+  text-align: center;
+  border-radius: 100px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--color2);
+  transform: scale(1.05);
+}
+
 /* FOOTER */
 
 .main-footer {
@@ -85,10 +105,15 @@ h2 {
 /* CONTAINER */
 
 .container {
+  margin: 4vh 2vw;
+  min-height: 68vh;
+}
+
+.coworkings-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  margin: 4vh 0;
+  margin-top: 5vh;
 }
 
 article {
@@ -98,7 +123,26 @@ article {
   padding: 15px;
   border-radius: 20px;
   background-color: var(--color1);
+  transition: all 0.2s ease-in-out;
+  position: relative;
 
+}
+
+article:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--color3);
+}
+
+article::after {
+  content: "";
+  width: 100px;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6px;
+  background-color: var(--color4);
+  position: absolute;
 }
 
 article .article-img-container {
@@ -127,4 +171,16 @@ article .article-img-container img{
 article > p {
   font-style: italic;
   color: var(--color3);
+}
+
+article .rate {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+article svg {
+  height: 12px;
+  width: auto;
+  fill: var(--color2);
 }

@@ -45,8 +45,8 @@ function App() {
     <>
       <Header />
       <div className="container">
-        <AllCoworkings coworkingsFromFakeApi={coworkingsFromFakeApi}/>
         <BestCoworkings coworkingsFromFakeApi={coworkingsFromFakeApi}/>
+        <AllCoworkings coworkingsFromFakeApi={coworkingsFromFakeApi}/>
       </div>
       <Footer />
     </>
