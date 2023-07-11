@@ -1,34 +1,56 @@
+import { useState } from "react"
+
 function CreateCoworking() {
 
-    const hundleSubmit = (event) =>{
-        event.preventDefault()
-        const title = event.target.title.value;
-        const description = event.target.description.value;
-        const address = event.target.address.value;
+    const [coworkingData, setCoworkingData] = useState({
+            title: "Pending…",
+            description: "Pending…",
+            address: "Pending…"
+    })
 
-        console.log("title : " + title + " / description : " + description + " / adress : " + address)
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+        // const title = event.target.title.value;
+        // const description = event.target.description.value;
+        // const address = event.target.address.value;
+
+        // console.log("title : " + title + " / description : " + description + " / adress : " + address)
+
+        setCoworkingData({
+           title: event.target.title.value,
+           description: event.target.description.value,
+           address: event.target.address.value
+        })
     }
 
     return(
-        <section className="form-section">
-            <form action="" onSubmit={hundleSubmit}>
-                <div className="form-input">
+        <>
+            <section className="form-section">
+            <form action="" onSubmit={handleSubmit}>
+                <h2>FORM</h2>
+                <div className="form-element">
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title" required />
                 </div>
-                <div className="form-input">
+                <div className="form-element">
                     <label for="description">Description </label>
                     <textarea type="text" name="description" id="description" required />
                 </div>
-                <div className="form-input">
+                <div className="form-element">
                     <label for="address">Address </label>
                     <input type="text" name="address" id="address" required />
                 </div>
-                <div className=" form-input submit-btn">
+                <div className=" form-element submit-btn">
                     <input type="submit" name="submit" id="submit" value="Send" required />
                 </div>
             </form>
         </section>
+        <section className="result-section">
+            <p><span>Title :</span> {coworkingData.title}</p>
+            <p><span>Description :</span> {coworkingData.description}</p>
+            <p><span>Address :</span> {coworkingData.address}</p>
+        </section>
+        </>
     )
 }
 
