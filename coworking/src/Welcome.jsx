@@ -1,7 +1,7 @@
 import { useState } from "react";
 function Welcome() {
 
-    const [displayMessage, setDisplayMessage] = useState(false);
+    const [displayMessage, setDisplayMessage] = useState(true);
 
     const handleClick = () => {
         setDisplayMessage(!displayMessage)
@@ -9,11 +9,12 @@ function Welcome() {
 
     return(
         <>
-            <a onClick={handleClick} className="button" href="#">{displayMessage ? "Afficher message" : "Cacher message"}</a>
 
             {(displayMessage == true) && 
-
-                <h1>Bienvenue !</h1>
+                <div className="banner">
+                    <button onClick={handleClick} className="button">X</button>
+                    <h1>Bienvenue !</h1>
+                /</div>
             }
         </>
     )

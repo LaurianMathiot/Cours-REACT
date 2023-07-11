@@ -11,7 +11,7 @@ function AllCoworkings({coworkingsFromFakeApi}) {
 
     return(
         <section className="coworkings-section">
-            <a onClick={handleClick} className="button" href="#">{displayCoworkings ? "Afficher moins" : "Afficher tout"}</a>
+            <button onClick={handleClick} className="button">{displayCoworkings ? "Afficher moins" : "Afficher tout"}</button>
 
             {(displayCoworkings == true) && 
                 <>

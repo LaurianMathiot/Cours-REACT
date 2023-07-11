@@ -45,9 +45,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="banner">
-        <Welcome />
-      </div>
+      <Welcome />
       <div className="container">
         <BestCoworkings coworkingsFromFakeApi={coworkingsFromFakeApi}/>
         <AllCoworkings coworkingsFromFakeApi={coworkingsFromFakeApi}/>
