@@ -25,9 +25,10 @@
 
 /* FORM SECTION */
 
-.form-section {
+.form-section, .contact-section {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: var(--color2);
   padding: 5vh 0;
   color: var(--color3);
@@ -38,6 +39,7 @@
 form {
   width: 200px;
   position: relative;
+  margin: 0 7vw;
 }
 
 .form-element {
@@ -135,4 +137,21 @@ form > h2 {
   width: 20vw;
   object-fit: cover;
   border-radius: 10px;
+}
+
+/* CONTACT SESSION */
+
+.submit-msg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  border: 1px solid var(--color3);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.userName {
+  color: white;
 }

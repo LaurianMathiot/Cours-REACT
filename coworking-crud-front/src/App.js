@@ -1,4 +1,5 @@
 import './App.css';
+import ContactForm from './ContactForm';
 import CreateCoworking from './CreateCoworking';
 import ListCoworkings from './ListCoworkings';
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <CreateCoworking />
       <ListCoworkings />
+      <ContactForm />
     </>
   );
 }
