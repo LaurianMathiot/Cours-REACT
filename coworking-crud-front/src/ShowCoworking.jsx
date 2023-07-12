@@ -1,3 +1,4 @@
+import UpdateCoworking from "./UpdateCoworking"
 
 function ShowCoworking({coworking}) {
 
@@ -13,6 +14,7 @@ function ShowCoworking({coworking}) {
             <p>{coworking.phone}</p>
             
             <button className="btn suppr-article-btn" onClick={handleDelete}>X</button>
+            <UpdateCoworking coworking={coworking}/>
         </article>
     )
 }
