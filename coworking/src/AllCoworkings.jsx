@@ -1,28 +1,29 @@
 import { useState } from "react";
-import Article from "./Article"
+import Article from "./Article";
 
-function AllCoworkings({coworkingsFromFakeApi}) {
+function AllCoworkings({ coworkingsFromFakeApi }) {
+  const [displayCoworkings, setDisplayCoworkings] = useState(false);
 
-    const [displayCoworkings, setDisplayCoworkings] = useState(false);
+  const handleClick = () => {
+    setDisplayCoworkings(!displayCoworkings);
+  };
 
-    const handleClick = () => {
-        setDisplayCoworkings(!displayCoworkings)
-      };
+  return (
+    <section className="coworkings-section">
+      <button onClick={handleClick} className="button">
+        {displayCoworkings ? "Afficher moins" : "Afficher tout"}
+      </button>
 
-    return(
-        <section className="coworkings-section">
-            <button onClick={handleClick} className="button">{displayCoworkings ? "Afficher moins" : "Afficher tout"}</button>
-
-            {(displayCoworkings == true) && 
-                <>
-                    <h2>Tous les coworkings</h2>
-                    {coworkingsFromFakeApi.map((coworking) => (
-                    <Article coworking={coworking}/>
-                    ))}
-                </>
-            }
-        </section>
-    )
+      {displayCoworkings == true && (
+        <>
+          <h2>Tous les coworkings</h2>
+          {coworkingsFromFakeApi.map((coworking) => (
+            <Article coworking={coworking} />
+          ))}
+        </>
+      )}
+    </section>
+  );
 }
 
-export default AllCoworkings
+export default AllCoworkings;
