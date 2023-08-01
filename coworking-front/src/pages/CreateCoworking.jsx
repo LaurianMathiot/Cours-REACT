@@ -1,7 +1,8 @@
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const HandleCreateCoworking = () => {
+const CreateCoworking = () => {
   const navigate = useNavigate();
 
   const handleCreateCoworking = async (event) => {
@@ -35,16 +36,19 @@ const HandleCreateCoworking = () => {
       },
     };
 
+    const token = Cookies.get("jwt");
+
     const responseCreate = await fetch("http://localhost:3010/api/coworkings", {
       method: "POST",
       body: JSON.stringify(coworkingData),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
     });
 
     const responseCreateJs = await responseCreate.json();
-    navigate("/coworkings");
+    navigate("/admin/coworkings");
   };
 
   return (
@@ -53,22 +57,24 @@ const HandleCreateCoworking = () => {
       <section className="form-section">
         <h2>Créer un coworking</h2>
         <form onSubmit={handleCreateCoworking} className="create-form">
-          <div className="form-element">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" />
+          <div className="grid-3">
+            <div className="form-element">
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" />
+            </div>
+
+            <div className="form-element">
+              <label htmlFor="superficy">Superficy</label>
+              <input type="number" name="superficy" />
+            </div>
+
+            <div className="form-element">
+              <label htmlFor="capacity">Capacity</label>
+              <input type="number" name="capacity" />
+            </div>
           </div>
 
-          <div className="form-element">
-            <label htmlFor="superficy">Superficy</label>
-            <input type="number" name="superficy" />
-          </div>
-
-          <div className="form-element">
-            <label htmlFor="capacity">Capacity</label>
-            <input type="number" name="capacity" />
-          </div>
-
-          <div className="price-element">
+          <div className="grid-3">
             <div className="form-element">
               <label htmlFor="price_hour">Price by hour</label>
               <input type="number" name="price_hour" />
@@ -111,4 +117,4 @@ const HandleCreateCoworking = () => {
   );
 };
 
-export default HandleCreateCoworking;
+export default CreateCoworking;
