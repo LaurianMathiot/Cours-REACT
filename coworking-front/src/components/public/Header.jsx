@@ -3,22 +3,12 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="main-header">
-      <p>BDX Coworkings</p>
+      <p>Coworkings BDX</p>
       <nav>
         <ul>
           <li>
             <Link className="link" to="/">
               Accueil
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/admin/coworkings">
-              Tous les coworkings
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/admin/coworkings/create-coworking">
-              Créer un coworking
             </Link>
           </li>
           <li>

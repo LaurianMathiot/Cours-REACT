@@ -14,6 +14,7 @@
   --lightbrown: #c4b8a7;
   --brown: #a08b73;
   --green: #bcbfa5;
+  --lightgreen: #d7dac4;
   --darkgrey: rgb(54, 54, 54);
   --red: rgb(168, 0, 0);
 }
@@ -30,6 +31,13 @@
 
 .btn:hover {
   background-color: var(--blue);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 /* HEADER */
@@ -88,6 +96,21 @@
 
 .flex-link:hover svg {
   transform: rotate(3600deg) scale(1.2);
+}
+
+.header-btn {
+  background-color: var(--lightgreen);
+  color: var(--darkgrey);
+  font-size: 1rem;
+  gap: 5px;
+}
+
+.header-btn svg {
+  fill: var(--darkgrey);
+}
+
+.header-btn:hover {
+  background-color: var(--white);
 }
 
 /* HOMEPAGE */
@@ -224,6 +247,14 @@ h2 {
   background-color: var(--white);
 }
 
+.pop-msg svg {
+  fill: var(--green);
+}
+
+.pop-msg-error svg {
+  fill: var(--red);
+}
+
 .pop-line {
   position: absolute;
   z-index: 200;
@@ -232,7 +263,7 @@ h2 {
   transform: translateX(-50%);
   background-color: var(--lightbrown);
   width: 310px;
-  height: 4px;
+  height: 6px;
   animation: scale 3s;
   transform-origin: 0;
 }
@@ -281,7 +312,7 @@ input {
 /* LOGIN */
 
 .login-section {
-  height: 72.8vh;
+  height: 79.9vh;
 }
 
 .login-section form {
@@ -297,4 +328,8 @@ input {
 
 .login-submit-btn {
   margin-top: 20px;
+}
+
+.header-btn svg {
+  fill: var(--darkgrey);
 }

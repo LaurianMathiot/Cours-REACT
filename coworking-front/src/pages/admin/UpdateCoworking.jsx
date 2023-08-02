@@ -1,7 +1,8 @@
-import Header from "../components/Header";
+import HeaderAdmin from "../../components/admin/HeaderAdmin";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import jwtDecode from "jwt-decode";
 
 const UpdateCoworking = () => {
   const navigate = useNavigate();
@@ -78,12 +79,20 @@ const UpdateCoworking = () => {
   };
 
   useEffect(() => {
+    const jwt = Cookies.get("jwt");
+    if (!jwt) {
+      navigate("/login");
+    }
+    const user = jwtDecode(jwt);
+    if (user.data.role === 1) {
+      navigate("/");
+    }
     fetchCoworking();
   }, [coworking]);
 
   return (
     <>
-      <Header />
+      <HeaderAdmin />
       <section className="form-section">
         <h2>Modifier un coworking</h2>
         <form className="create-form" onSubmit={handleUpdateCoworking}>
