@@ -10,6 +10,7 @@
 :root {
   --white: white;
   --coral: #fae9de;
+  --lightcorail: #fff5ee;
   --blue: #8e94b0;
   --lightbrown: #c4b8a7;
   --brown: #a08b73;
@@ -332,4 +333,13 @@ input {
 
 .header-btn svg {
   fill: var(--darkgrey);
+}
+
+/* REVIEW */
+
+.review-input {
+  border-radius: 30px;
+  border: none;
+  background-color: var(--lightcorail);
+  padding: 10px;
 }

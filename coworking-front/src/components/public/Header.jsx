@@ -12,6 +12,11 @@ const Header = () => {
             </Link>
           </li>
           <li>
+            <Link className="link" to="/coworkings">
+              Tous les coworkings
+            </Link>
+          </li>
+          <li>
             <Link className="link flex-link" to="/login">
               Login
               <svg

@@ -20,6 +20,11 @@ const HeaderAdmin = () => {
       <nav>
         <ul>
           <li>
+            <Link className="link" to="/admin">
+              Dashboard
+            </Link>
+          </li>
+          <li>
             <Link className="link" to="/admin/coworkings">
               Tous les coworkings
             </Link>
@@ -27,11 +32,6 @@ const HeaderAdmin = () => {
           <li>
             <Link className="link" to="/admin/coworkings/create-coworking">
               Créer un coworking
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/admin">
-              Dashboard
             </Link>
           </li>
           <li>
